@@ -15,6 +15,7 @@ import image from '../../../assets/image/image.jpg'
 
 interface HomeAboutProps {
   background: 'gray' | 'white'
+  imagePosition: 'left' | 'right'
   title: string
   description: string
   button: string
@@ -25,15 +26,19 @@ const HomeAbout: React.FC<HomeAboutProps> = ({
   background,
   title,
   description,
+  imagePosition,
   button,
-  isFirst = false
+  isFirst
 }) => {
-  console.log(isFirst)
+  const addMarginTop = !isFirst ? 'mt-xs' : ''
+  const isFirstContainer = isFirst ? 'first-container' : ''
 
   return (
-    <Container className={background}>
-      <Content className={!isFirst ? 'mt-xs' : ''}>
-        <InfoContainer>
+    <Container className={`${background}`}>
+      <Content
+        className={`${imagePosition} ${addMarginTop} ${isFirstContainer}`}
+      >
+        <InfoContainer className={imagePosition}>
           <Title>{title}</Title>
           <Description>{description}</Description>
           <Button name={button} type="button" />

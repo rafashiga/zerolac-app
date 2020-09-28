@@ -11,21 +11,47 @@ export const Container = styled.div`
 
 export const Content = styled.div`
   margin: 0 auto;
-  width: 80%;
-  padding-top: ${rem(120)};
-  padding-bottom: ${rem(20)};
+  width: 90%;
+  padding: 1rem 0;
 
   &.mt-xs {
     margin-top: -1rem;
   }
+
+  &.first-container {
+    padding-top: ${rem(120)};
+  }
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &.right {
+    flex-direction: row;
+  }
+
+  &.left {
+    flex-direction: row-reverse;
+  }
+
+  @media (min-width: 900px) {
+    width: 70%;
+  }
 `
 
 export const InfoContainer = styled.div`
-  width: 100%;
+  width: 50%;
+  &.right {
+    margin-right: 3rem;
+  }
+
+  &.left {
+    margin-left: 3rem;
+  }
 `
 
-export const Title = styled.h1`
-  font-size: 32px;
+export const Title = styled.h2`
+  font-size: 42px;
 `
 
 export const Description = styled.h3`
@@ -39,6 +65,14 @@ export const Description = styled.h3`
   }
 `
 
-export const ImageContainer = styled.div``
+export const ImageContainer = styled.div`
+  width: ${rem(300)};
 
-export const Image = styled.img``
+  @media (min-width: 900px) {
+    width: ${rem(400)};
+  }
+`
+
+export const Image = styled.img`
+  width: 100%;
+`

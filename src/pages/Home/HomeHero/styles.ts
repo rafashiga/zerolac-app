@@ -25,7 +25,7 @@ export const Container = styled.div`
 
 export const Content = styled.div`
   margin: 0 auto;
-  width: 80%;
+  width: 65%;
   height: 100%;
   display: flex;
   align-items: center;
