@@ -14,6 +14,7 @@ import {
 import image from '../../../assets/image/image.jpg'
 
 interface HomeAboutProps {
+  id: string
   background: 'gray' | 'white'
   imagePosition: 'left' | 'right'
   title: string
@@ -23,6 +24,7 @@ interface HomeAboutProps {
 }
 
 const HomeAbout: React.FC<HomeAboutProps> = ({
+  id,
   background,
   title,
   description,
@@ -34,7 +36,7 @@ const HomeAbout: React.FC<HomeAboutProps> = ({
   const isFirstContainer = isFirst ? 'first-container' : ''
 
   return (
-    <Container className={`${background}`}>
+    <Container className={`${background}`} id={id}>
       <Content
         className={`${imagePosition} ${addMarginTop} ${isFirstContainer}`}
       >

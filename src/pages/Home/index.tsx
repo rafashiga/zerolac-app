@@ -9,6 +9,7 @@ const Home: React.FC = () => {
     <>
       <HomeHero />
       <HomeAbout
+        id="sobre"
         background="white"
         title="title"
         description="Et dolore incididunt amet nulla veniam reprehenderit magna eiusmod eiusmod ex do dolor. Ex laborum sit consectetur fugiat in sunt sunt officia reprehenderit laboris voluptate. Ex qui reprehenderit in ea culpa labore labore sint."
@@ -29,6 +30,7 @@ const Home: React.FC = () => {
       </WaveTop>
       {/*  */}
       <HomeAbout
+        id="sobre2"
         background="gray"
         title="title"
         description="Et dolore incididunt amet nulla veniam reprehenderit magna eiusmod eiusmod ex do dolor. Ex laborum sit consectetur fugiat in sunt sunt officia reprehenderit laboris voluptate. Ex qui reprehenderit in ea culpa labore labore sint."
@@ -47,6 +49,7 @@ const Home: React.FC = () => {
       </WaveBottom>
       {/*  */}
       <HomeAbout
+        id="sobre3"
         background="white"
         title="title"
         description="Et dolore incididunt amet nulla veniam reprehenderit magna eiusmod eiusmod ex do dolor. Ex laborum sit consectetur fugiat in sunt sunt officia reprehenderit laboris voluptate. Ex qui reprehenderit in ea culpa labore labore sint."
@@ -66,6 +69,7 @@ const Home: React.FC = () => {
       </WaveTop>
       {/*  */}
       <HomeAbout
+        id="sobre4"
         background="gray"
         title="title"
         description="Et dolore incididunt amet nulla veniam reprehenderit magna eiusmod eiusmod ex do dolor. Ex laborum sit consectetur fugiat in sunt sunt officia reprehenderit laboris voluptate. Ex qui reprehenderit in ea culpa labore labore sint."
@@ -84,6 +88,7 @@ const Home: React.FC = () => {
       </WaveBottom>
       {/*  */}
       <HomeAbout
+        id="sobre5"
         background="white"
         title="title"
         description="Et dolore incididunt amet nulla veniam reprehenderit magna eiusmod eiusmod ex do dolor. Ex laborum sit consectetur fugiat in sunt sunt officia reprehenderit laboris voluptate. Ex qui reprehenderit in ea culpa labore labore sint."

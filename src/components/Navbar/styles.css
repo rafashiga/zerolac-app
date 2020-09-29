@@ -1,0 +1,17 @@
+.navbar {
+  width: 100%;
+  position: fixed;
+  color: #fff;
+  background: transparent;
+}
+
+.scroll {
+  color: #000;
+  background: #fff;
+  border-bottom: 1px solid #f0f0f0;
+  box-shadow: 0 4px 12px -9px gray;
+}
+
+.scroll a {
+  color: #000;
+}

@@ -2,6 +2,7 @@ import { rem } from 'polished'
 import styled from 'styled-components'
 
 export const Container = styled.div`
+  margin-top: ${rem(100)};
   width: 100%;
   background: #000;
   color: #fff;

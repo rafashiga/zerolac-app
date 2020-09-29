@@ -5,7 +5,7 @@ import { Container, Content, InfoContainer, Title, Description } from './styles'
 
 const HomeHero: React.FC = () => {
   return (
-    <Container>
+    <Container id="inicio">
       <Content>
         <InfoContainer>
           <Title>Zerolac</Title>
