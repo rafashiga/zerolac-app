@@ -40,14 +40,14 @@ const HomeAbout: React.FC<HomeAboutProps> = ({
       <Content
         className={`${imagePosition} ${addMarginTop} ${isFirstContainer}`}
       >
+        <ImageContainer>
+          <Image src={image} />
+        </ImageContainer>
         <InfoContainer className={imagePosition}>
           <Title>{title}</Title>
           <Description>{description}</Description>
           <Button name={button} type="button" />
         </InfoContainer>
-        <ImageContainer>
-          <Image src={image} />
-        </ImageContainer>
       </Content>
     </Container>
   )

@@ -2,7 +2,15 @@
   width: 100%;
   position: fixed;
   color: #fff;
-  background: transparent;
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 12px -9px black;
+}
+
+@media (min-width: 900px) {
+  .navbar {
+    background: transparent;
+    box-shadow: none;
+  }
 }
 
 .scroll {
@@ -14,4 +22,9 @@
 
 .scroll a {
   color: #000;
+}
+
+.scroll button {
+  color: #000;
+  border: 2px solid #000;
 }

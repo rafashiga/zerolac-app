@@ -14,39 +14,49 @@ export const Content = styled.div`
   width: 90%;
   padding: 1rem 0;
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   &.mt-xs {
     margin-top: -1rem;
   }
 
   &.first-container {
-    padding-top: ${rem(120)};
-  }
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  &.right {
-    flex-direction: row;
-  }
-
-  &.left {
-    flex-direction: row-reverse;
+    padding-top: ${rem(50)};
   }
 
   @media (min-width: 900px) {
     width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &.right {
+      flex-direction: row-reverse;
+    }
+
+    &.left {
+      flex-direction: row;
+    }
+
+    &.first-container {
+      padding-top: ${rem(120)};
+    }
   }
 `
 
 export const InfoContainer = styled.div`
   width: 50%;
-  &.right {
-    margin-right: 3rem;
-  }
 
-  &.left {
-    margin-left: 3rem;
+  @media (min-width: 900px) {
+    &.right {
+      margin-right: 3rem;
+    }
+
+    &.left {
+      margin-left: 3rem;
+    }
   }
 `
 
@@ -66,13 +76,16 @@ export const Description = styled.h3`
 `
 
 export const ImageContainer = styled.div`
-  width: ${rem(300)};
+  width: ${rem(250)};
+  margin-bottom: 2rem;
 
   @media (min-width: 900px) {
     width: ${rem(400)};
+    margin: 0;
   }
 `
 
 export const Image = styled.img`
   width: 100%;
+  border-radius: 8px;
 `
