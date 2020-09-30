@@ -9,7 +9,8 @@ import {
   NavList,
   NavItem,
   NavLink,
-  NavButton
+  NavButton,
+  NavListContainer
 } from './styles'
 import './styles.css'
 
@@ -21,11 +22,10 @@ const Navbar: React.FC = () => {
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
-    console.log(location.hash)
     setCurrentHash(location.hash)
 
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, [location.hash])
 
   const handleScroll = () => {
     let nav = navbarRef.current
@@ -60,62 +60,66 @@ const Navbar: React.FC = () => {
           <HiMenu />
         </NavButton>
 
-        <NavList className={showLinks ? 'navbar-open' : 'navbar-close'}>
-          <NavItem>
-            <NavLink
-              to="/#inicio"
-              onClick={() => handleNavLink('#inicio')}
-              activeClassName={currentHash === '#inicio' ? 'selected' : ''}
-            >
-              início
-            </NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink
-              to="/#sobre"
-              onClick={() => handleNavLink('#sobre')}
-              activeClassName={currentHash === '#sobre' ? 'selected' : ''}
-            >
-              sobre
-            </NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink
-              to="#sobre2"
-              onClick={() => handleNavLink('#sobre2')}
-              activeClassName={currentHash === '#sobre2' ? 'selected' : ''}
-            >
-              item01
-            </NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink
-              to="#sobre3"
-              onClick={() => handleNavLink('#sobre3')}
-              activeClassName={currentHash === '#sobre3' ? 'selected' : ''}
-            >
-              item02
-            </NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink
-              to="#sobre4"
-              onClick={() => handleNavLink('#sobre4')}
-              activeClassName={currentHash === '#sobre4' ? 'selected' : ''}
-            >
-              item03
-            </NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink
-              to="#sobre5"
-              onClick={() => handleNavLink('#sobre5')}
-              activeClassName={currentHash === '#sobre5' ? 'selected' : ''}
-            >
-              item04
-            </NavLink>
-          </NavItem>
-        </NavList>
+        <NavListContainer
+          className={showLinks ? 'navbar-open' : 'navbar-close'}
+        >
+          <NavList>
+            <NavItem>
+              <NavLink
+                to="/#inicio"
+                onClick={() => handleNavLink('#inicio')}
+                activeClassName={currentHash === '#inicio' ? 'selected' : ''}
+              >
+                início
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink
+                to="/#sobre"
+                onClick={() => handleNavLink('#sobre')}
+                activeClassName={currentHash === '#sobre' ? 'selected' : ''}
+              >
+                sobre
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink
+                to="#sobre2"
+                onClick={() => handleNavLink('#sobre2')}
+                activeClassName={currentHash === '#sobre2' ? 'selected' : ''}
+              >
+                item01
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink
+                to="#sobre3"
+                onClick={() => handleNavLink('#sobre3')}
+                activeClassName={currentHash === '#sobre3' ? 'selected' : ''}
+              >
+                item02
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink
+                to="#sobre4"
+                onClick={() => handleNavLink('#sobre4')}
+                activeClassName={currentHash === '#sobre4' ? 'selected' : ''}
+              >
+                item03
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink
+                to="#sobre5"
+                onClick={() => handleNavLink('#sobre5')}
+                activeClassName={currentHash === '#sobre5' ? 'selected' : ''}
+              >
+                item04
+              </NavLink>
+            </NavItem>
+          </NavList>
+        </NavListContainer>
       </Container>
     </Nav>
   )

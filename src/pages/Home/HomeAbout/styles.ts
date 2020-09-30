@@ -27,7 +27,7 @@ export const Content = styled.div`
   }
 
   @media (min-width: 900px) {
-    width: 70%;
+    width: 65%;
     display: flex;
     align-items: center;
     justify-content: space-between;

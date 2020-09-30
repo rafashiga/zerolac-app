@@ -16,6 +16,6 @@ export const Content = styled.div`
   align-items: center;
 
   @media (min-width: 900px) {
-    width: 70%;
+    width: 65%;
   }
 `

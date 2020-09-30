@@ -1,13 +1,18 @@
 import { Link } from 'react-router-dom'
 import { NavHashLink } from 'react-router-hash-link'
 import styled from 'styled-components'
+import { rem } from 'polished'
 
-export const Nav = styled.nav``
+export const Nav = styled.nav`
+  overflow: hidden;
+`
 
 export const Container = styled.div`
   width: 90%;
   margin: 0 auto;
   position: relative;
+  overflow: hidden;
+  min-height: 56px;
 
   @media (min-width: 900px) {
     height: 56px;
@@ -23,6 +28,13 @@ export const Logo = styled(Link)`
   font-size: 2rem;
   text-decoration: none;
   color: #fff;
+  position: absolute;
+  top: 8px;
+
+  @media (min-width: 900px) {
+    position: relative;
+    top: 0;
+  }
 `
 
 export const NavButton = styled.button`
@@ -35,7 +47,7 @@ export const NavButton = styled.button`
   border: 1px solid #fff;
   position: absolute;
   right: 0;
-  top: 3px;
+  top: 10px;
   cursor: pointer;
   transition: background 0.2s;
   font-weight: 600;
@@ -51,29 +63,41 @@ export const NavButton = styled.button`
   }
 `
 
-export const NavList = styled.ul`
-  list-style: none;
-  transition: all 0.2s;
+export const NavListContainer = styled.div`
+  transition: max-height 1s ease-out, opacity 1.4s;
+  margin-top: 3.5rem;
 
   &.navbar-close {
-    display: none;
+    /* display: none; */
+    visibility: hidden;
+    opacity: 0;
+    max-height: 0;
   }
 
   &.navbar-open {
-    display: initial;
-    transform: translate3d(0, 0, 0) rotate(0deg);
+    /* display: block; */
+    visibility: visible;
+    opacity: 1;
+    max-height: 500px;
   }
 
   @media (min-width: 900px) {
-    display: flex;
+    margin-top: 0;
 
-    &.navbar-close {
-      display: flex;
-    }
-
+    &.navbar-close,
     &.navbar-open {
-      display: flex;
+      visibility: visible;
+      opacity: 1;
+      max-height: ${rem(60)};
     }
+  }
+`
+
+export const NavList = styled.ul`
+  list-style: none;
+
+  @media (min-width: 900px) {
+    display: flex;
   }
 `
 
