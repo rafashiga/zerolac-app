@@ -88,5 +88,4 @@ export const ImageContainer = styled.div`
 export const Image = styled.img`
   width: 100%;
   border-radius: 8px;
-  box-shadow: 2px 2px 4px #000000;
 `

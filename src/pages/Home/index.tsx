@@ -5,8 +5,10 @@ import HomeHero from './HomeHero'
 import { WaveTop, WaveBottom } from './styles'
 
 import intoleranciaImage from '../../assets/image/intolerancia.jpg'
+import biaImage from '../../assets/image/bia.jpg'
 import milkImage from '../../assets/image/milk.jpg'
 import rotuloImage from '../../assets/image/rotulo.jpg'
+import processImage from '../../assets/image/image05.jpg'
 
 const Home: React.FC = () => {
   return (
@@ -22,7 +24,7 @@ const Home: React.FC = () => {
           divulgar de forma simples diversars informações 
           que vão desde a composição do leite até leite deslactosado disponível nos supermercados.​
         `}
-        image={intoleranciaImage}
+        image={biaImage}
         imagePosition="left"
         button="button"
         isFirst={true}
@@ -99,7 +101,7 @@ const Home: React.FC = () => {
           O Leite UHT pode ser deslactosado por dois processos: o químico e enzimático.
         `}
         button="saiba mais"
-        image={intoleranciaImage}
+        image={processImage}
         imagePosition="right"
         fadeImage="fade-left"
       />
