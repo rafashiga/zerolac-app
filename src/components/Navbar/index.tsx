@@ -41,6 +41,7 @@ const Navbar: React.FC = () => {
 
   const handleNavLink = (hash: string) => {
     setCurrentHash(hash)
+    document.getElementById('btn-' + hash.replace('#', ''))?.focus()
   }
 
   const toggleNavbar = () => {
