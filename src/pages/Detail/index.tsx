@@ -31,7 +31,7 @@ const Detail: React.FC = () => {
 
   return (
     <>
-      <Image />
+      <Image backgroundImage={item.image} />
       <Container>
         <Title>{item.title}​</Title>
         <Text>{item.description}</Text>

@@ -1,10 +1,17 @@
 import { rem } from 'polished'
 import styled from 'styled-components'
 
-export const Image = styled.div`
+type ImageDiv = {
+  backgroundImage: string
+}
+
+export const Image = styled.div<ImageDiv>`
   width: 100%;
   height: ${rem(300)};
-  background: #000;
+  background-image: url(${props => props.backgroundImage});
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
 `
 
 export const Container = styled.div`

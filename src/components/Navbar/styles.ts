@@ -23,7 +23,8 @@ export const Container = styled.div`
 `
 
 export const Logo = styled(Link)`
-  font-size: 2rem;
+  font-size: 2.1rem;
+  font-family: 'Pacifico', cursive;
   text-decoration: none;
   color: #fff;
   position: absolute;

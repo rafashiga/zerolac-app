@@ -26,7 +26,7 @@ export const Content = styled.div`
     padding-top: ${rem(50)};
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: ${props => props.theme.screen.desktop}) {
     width: 65%;
     display: flex;
     align-items: center;
@@ -49,7 +49,7 @@ export const Content = styled.div`
 export const InfoContainer = styled.div`
   width: 100%;
 
-  @media (min-width: 900px) {
+  @media (min-width: ${props => props.theme.screen.desktop}) {
     width: 50%;
 
     &.right {
@@ -64,19 +64,21 @@ export const InfoContainer = styled.div`
 
 export const Title = styled.h2`
   font-size: ${rem(24)};
+  margin-top: 2.5rem;
 
-  @media (min-width: 900px) {
+  @media (min-width: ${props => props.theme.screen.desktop}) {
+    margin: 0;
     font-size: ${rem(42)};
   }
 `
 
-export const Description = styled.h3`
+export const Description = styled.p`
   font-weight: 300;
   font-size: 1rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
 
-  @media (min-width: 900px) {
+  @media (min-width: ${props => props.theme.screen.desktop}) {
     font-size: 1.25rem;
   }
 `
@@ -87,7 +89,7 @@ export const ImageContainer = styled.div`
 
   margin-top: 1rem;
 
-  @media (min-width: 900px) {
+  @media (min-width: ${props => props.theme.screen.desktop}) {
     width: ${rem(400)};
     margin: 0;
   }

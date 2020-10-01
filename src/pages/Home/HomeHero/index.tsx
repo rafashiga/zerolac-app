@@ -1,7 +1,14 @@
 import React from 'react'
 import Button from '../../../components/Button'
 
-import { Container, Content, InfoContainer, Title, Description } from './styles'
+import {
+  Container,
+  Content,
+  InfoContainer,
+  Title,
+  Description,
+  Link
+} from './styles'
 
 const HomeHero: React.FC = () => {
   return (
@@ -14,7 +21,7 @@ const HomeHero: React.FC = () => {
             produzido na indústria.​ Entenda a diferença entre os tipos de
             intolêrancias. Descubra como interpretar os rótulos.
           </Description>
-          <Button label="saiba mais" type="button" />
+          <Link to="/#apresentacao">Saiba mais</Link>
         </InfoContainer>
       </Content>
     </Container>

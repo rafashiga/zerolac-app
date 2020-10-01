@@ -1,5 +1,7 @@
 import styled from 'styled-components'
+import { NavHashLink } from 'react-router-hash-link'
 import heroImage from '../../../assets/image/hero.jpg'
+import { darken, rem } from 'polished'
 
 export const Container = styled.div`
   height: 90vh;
@@ -14,7 +16,7 @@ export const Container = styled.div`
     background-size: 100vh;
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: ${props => props.theme.screen.desktop}) {
     background-image: linear-gradient(to right, #000 10%, transparent 80%),
       url(${heroImage});
     background-repeat: no-repeat;
@@ -36,7 +38,8 @@ export const InfoContainer = styled.div`
 `
 
 export const Title = styled.h2`
-  font-size: 48px;
+  font-size: ${rem(48)};
+  font-family: 'Pacifico', cursive;
 `
 
 export const Description = styled.h3`
@@ -47,5 +50,23 @@ export const Description = styled.h3`
 
   @media (min-width: 900px) {
     font-size: 1.25rem;
+  }
+`
+
+export const Link = styled(NavHashLink)`
+  cursor: pointer;
+  min-width: ${rem(100)};
+  font: 400 19px Roboto;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background: ${props => props.theme.colors.primary};
+  border: 1px solid ${props => props.theme.colors.primary};
+  color: #fff;
+  transition: background 0.3s;
+  text-decoration: none;
+
+  &:hover {
+    background: ${props => darken(0.1, props.theme.colors.primary)};
+    border: 1px solid ${props => darken(0.1, props.theme.colors.primary)};
   }
 `

@@ -21,19 +21,20 @@ const Navbar: React.FC = () => {
   const navbarRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    if (location.pathname !== '/detail') {
+    let nav = navbarRef.current
+
+    if (!location.pathname.includes('/detail')) {
+      if (nav) nav.className = 'navbar'
       window.addEventListener('scroll', handleScroll)
       setCurrentHash(location.hash)
 
       return () => window.removeEventListener('scroll', handleScroll)
     } else {
-      let nav = navbarRef.current
-
       if (nav) {
         nav.className = 'navbar scroll'
       }
     }
-  }, [location.hash])
+  }, [location.hash, location.pathname])
 
   const handleScroll = () => {
     let nav = navbarRef.current
