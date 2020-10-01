@@ -16,6 +16,7 @@ const Home: React.FC = () => {
         imagePosition="left"
         button="button"
         isFirst={true}
+        fadeImage="fade-right"
       />
       <WaveTop
         version="1.1"
@@ -36,6 +37,7 @@ const Home: React.FC = () => {
         description="Et dolore incididunt amet nulla veniam reprehenderit magna eiusmod eiusmod ex do dolor. Ex laborum sit consectetur fugiat in sunt sunt officia reprehenderit laboris voluptate. Ex qui reprehenderit in ea culpa labore labore sint."
         button="button"
         imagePosition="right"
+        fadeImage="fade-left"
       />
       <WaveBottom
         xmlns="http://www.w3.org/2000/svg"
@@ -55,6 +57,7 @@ const Home: React.FC = () => {
         description="Et dolore incididunt amet nulla veniam reprehenderit magna eiusmod eiusmod ex do dolor. Ex laborum sit consectetur fugiat in sunt sunt officia reprehenderit laboris voluptate. Ex qui reprehenderit in ea culpa labore labore sint."
         button="button"
         imagePosition="left"
+        fadeImage="fade-right"
       />
       <WaveTop
         version="1.1"
@@ -75,6 +78,7 @@ const Home: React.FC = () => {
         description="Et dolore incididunt amet nulla veniam reprehenderit magna eiusmod eiusmod ex do dolor. Ex laborum sit consectetur fugiat in sunt sunt officia reprehenderit laboris voluptate. Ex qui reprehenderit in ea culpa labore labore sint."
         button="button"
         imagePosition="right"
+        fadeImage="fade-left"
       />
       <WaveBottom
         xmlns="http://www.w3.org/2000/svg"
@@ -94,6 +98,7 @@ const Home: React.FC = () => {
         description="Et dolore incididunt amet nulla veniam reprehenderit magna eiusmod eiusmod ex do dolor. Ex laborum sit consectetur fugiat in sunt sunt officia reprehenderit laboris voluptate. Ex qui reprehenderit in ea culpa labore labore sint."
         button="button"
         imagePosition="left"
+        fadeImage="fade-right"
       />
     </>
   )

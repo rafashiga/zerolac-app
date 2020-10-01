@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import AOS from 'aos'
 import Button from '../../../components/Button'
 
 import {
@@ -21,6 +22,7 @@ interface HomeAboutProps {
   description: string
   button: string
   isFirst?: boolean
+  fadeImage: string
 }
 
 const HomeAbout: React.FC<HomeAboutProps> = ({
@@ -30,23 +32,30 @@ const HomeAbout: React.FC<HomeAboutProps> = ({
   description,
   imagePosition,
   button,
-  isFirst
+  isFirst,
+  fadeImage
 }) => {
   const addMarginTop = !isFirst ? 'mt-xs' : ''
   const isFirstContainer = isFirst ? 'first-container' : ''
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000
+    })
+  }, [])
 
   return (
     <Container className={`${background}`} id={id}>
       <Content
         className={`${imagePosition} ${addMarginTop} ${isFirstContainer}`}
       >
-        <ImageContainer>
+        <ImageContainer data-aos="fade-up">
           <Image src={image} />
         </ImageContainer>
-        <InfoContainer className={imagePosition}>
+        <InfoContainer className={imagePosition} data-aos="fade-up">
           <Title>{title}</Title>
           <Description>{description}</Description>
-          <Button name={button} type="button" />
+          <Button id={`btn-${id}`} name={button} type="button" />
         </InfoContainer>
       </Content>
     </Container>

@@ -1,6 +1,7 @@
 import React from 'react'
 import Routes from './routes'
 import { ThemeProvider } from 'styled-components'
+import 'aos/dist/aos.css'
 
 import GlobalStyle from './styles/global'
 import theme from './styles/theme'
