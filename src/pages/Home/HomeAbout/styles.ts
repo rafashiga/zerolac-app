@@ -47,9 +47,11 @@ export const Content = styled.div`
 `
 
 export const InfoContainer = styled.div`
-  width: 50%;
+  width: 100%;
 
   @media (min-width: 900px) {
+    width: 50%;
+
     &.right {
       margin-right: 3rem;
     }
@@ -61,7 +63,11 @@ export const InfoContainer = styled.div`
 `
 
 export const Title = styled.h2`
-  font-size: 42px;
+  font-size: ${rem(24)};
+
+  @media (min-width: 900px) {
+    font-size: ${rem(42)};
+  }
 `
 
 export const Description = styled.h3`
@@ -77,7 +83,9 @@ export const Description = styled.h3`
 
 export const ImageContainer = styled.div`
   width: ${rem(250)};
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+
+  margin-top: 1rem;
 
   @media (min-width: 900px) {
     width: ${rem(400)};
