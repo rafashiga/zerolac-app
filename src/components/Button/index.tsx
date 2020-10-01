@@ -3,12 +3,12 @@ import React from 'react'
 import { Container } from './styles'
 
 interface ButtonProps {
-  name: string
+  label: string
   [x: string]: any
 }
 
-const Button: React.FC<ButtonProps> = ({ name, ...rest }) => {
-  return <Container {...rest}>{name}</Container>
+const Button: React.FC<ButtonProps> = ({ label, ...rest }) => {
+  return <Container {...rest}>{label}</Container>
 }
 
 export default Button

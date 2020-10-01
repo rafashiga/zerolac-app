@@ -14,7 +14,7 @@ const HomeHero: React.FC = () => {
             produzido na indústria.​ Entenda a diferença entre os tipos de
             intolêrancias. Descubra como interpretar os rótulos.
           </Description>
-          <Button name="saiba mais" type="button" />
+          <Button label="saiba mais" type="button" />
         </InfoContainer>
       </Content>
     </Container>

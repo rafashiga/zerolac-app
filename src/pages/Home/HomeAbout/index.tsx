@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import AOS from 'aos'
 import Button from '../../../components/Button'
 
@@ -11,6 +11,7 @@ import {
   ImageContainer,
   Image
 } from './styles'
+import { useHistory } from 'react-router-dom'
 
 interface HomeAboutProps {
   id: string
@@ -19,9 +20,9 @@ interface HomeAboutProps {
   imagePosition: 'left' | 'right'
   title: string
   description: string
-  button: string
+  buttonLabel?: string
+  buttonLink?: string
   isFirst?: boolean
-  fadeImage: string
 }
 
 const HomeAbout: React.FC<HomeAboutProps> = ({
@@ -31,18 +32,23 @@ const HomeAbout: React.FC<HomeAboutProps> = ({
   description,
   image,
   imagePosition,
-  button,
-  isFirst,
-  fadeImage
+  buttonLabel,
+  buttonLink,
+  isFirst
 }) => {
   const addMarginTop = !isFirst ? 'mt-xs' : ''
   const isFirstContainer = isFirst ? 'first-container' : ''
+  const history = useHistory()
 
   useEffect(() => {
     AOS.init({
       duration: 1000
     })
   }, [])
+
+  const handleNavigate = () => {
+    if (buttonLink) history.push(buttonLink)
+  }
 
   return (
     <Container className={`${background}`} id={id}>
@@ -55,7 +61,14 @@ const HomeAbout: React.FC<HomeAboutProps> = ({
         <InfoContainer className={imagePosition} data-aos="fade-up">
           <Title>{title}</Title>
           <Description dangerouslySetInnerHTML={{ __html: description }} />
-          <Button id={`btn-${id}`} name={button} type="button" />
+          {buttonLabel && (
+            <Button
+              id={`btn-${id}`}
+              onClick={handleNavigate}
+              label={buttonLabel}
+              type="button"
+            />
+          )}
         </InfoContainer>
       </Content>
     </Container>

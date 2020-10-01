@@ -21,21 +21,25 @@ const Navbar: React.FC = () => {
   const navbarRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll)
-    setCurrentHash(location.hash)
+    if (location.pathname !== '/detail') {
+      window.addEventListener('scroll', handleScroll)
+      setCurrentHash(location.hash)
 
-    return () => window.removeEventListener('scroll', handleScroll)
+      return () => window.removeEventListener('scroll', handleScroll)
+    } else {
+      let nav = navbarRef.current
+
+      if (nav) {
+        nav.className = 'navbar scroll'
+      }
+    }
   }, [location.hash])
 
   const handleScroll = () => {
     let nav = navbarRef.current
 
     if (nav) {
-      if (window.scrollY > 240) {
-        nav.className = 'navbar scroll'
-      } else {
-        nav.className = 'navbar'
-      }
+      nav.className = window.scrollY > 240 ? 'navbar scroll' : 'navbar'
     }
   }
 
@@ -76,47 +80,51 @@ const Navbar: React.FC = () => {
             </NavItem>
             <NavItem>
               <NavLink
-                to="/#sobre"
-                onClick={() => handleNavLink('#sobre')}
-                activeClassName={currentHash === '#sobre' ? 'selected' : ''}
+                to="/#apresentacao"
+                onClick={() => handleNavLink('#apresentacao')}
+                activeClassName={
+                  currentHash === '#apresentacao' ? 'selected' : ''
+                }
               >
-                sobre
+                apresentação
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink
-                to="#sobre2"
-                onClick={() => handleNavLink('#sobre2')}
-                activeClassName={currentHash === '#sobre2' ? 'selected' : ''}
+                to="#leite"
+                onClick={() => handleNavLink('#leite')}
+                activeClassName={currentHash === '#leite' ? 'selected' : ''}
               >
-                item01
+                leite
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink
-                to="#sobre3"
-                onClick={() => handleNavLink('#sobre3')}
-                activeClassName={currentHash === '#sobre3' ? 'selected' : ''}
+                to="#intolerancia"
+                onClick={() => handleNavLink('#intolerancia')}
+                activeClassName={
+                  currentHash === '#intolerancia' ? 'selected' : ''
+                }
               >
-                item02
+                intolerância
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink
-                to="#sobre4"
-                onClick={() => handleNavLink('#sobre4')}
-                activeClassName={currentHash === '#sobre4' ? 'selected' : ''}
+                to="#processo"
+                onClick={() => handleNavLink('#processo')}
+                activeClassName={currentHash === '#processo' ? 'selected' : ''}
               >
-                item03
+                processo
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink
-                to="#sobre5"
-                onClick={() => handleNavLink('#sobre5')}
-                activeClassName={currentHash === '#sobre5' ? 'selected' : ''}
+                to="#rotulo"
+                onClick={() => handleNavLink('#rotulo')}
+                activeClassName={currentHash === '#rotulo' ? 'selected' : ''}
               >
-                item04
+                rótulo
               </NavLink>
             </NavItem>
           </NavList>

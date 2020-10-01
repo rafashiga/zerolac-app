@@ -15,7 +15,7 @@ const Home: React.FC = () => {
     <>
       <HomeHero />
       <HomeAbout
-        id="sobre"
+        id="apresentacao"
         background="white"
         title="Apresentação"
         description={`Olá! Sou a Beatriz Shiga. Muito prazer!​ <br> <br>
@@ -26,9 +26,7 @@ const Home: React.FC = () => {
         `}
         image={biaImage}
         imagePosition="left"
-        button="button"
         isFirst={true}
-        fadeImage="fade-right"
       />
       <WaveTop
         version="1.1"
@@ -43,17 +41,17 @@ const Home: React.FC = () => {
       </WaveTop>
       {/*  */}
       <HomeAbout
-        id="sobre2"
+        id="leite"
         background="gray"
         title="Leite"
         description={`
           O leite é considerado um dos alimentos mais completos. ​
           É constituído de água, proteínas, carboidratos, gorduras, sais minerais e vitaminas. 
         `}
-        button="saiba mais"
+        buttonLabel="saiba mais"
+        buttonLink="/detail/leite"
         image={milkImage}
         imagePosition="right"
-        fadeImage="fade-left"
       />
       <WaveBottom
         xmlns="http://www.w3.org/2000/svg"
@@ -67,17 +65,17 @@ const Home: React.FC = () => {
       </WaveBottom>
       {/*  */}
       <HomeAbout
-        id="sobre3"
+        id="intolerancia"
         background="white"
         title="Intolerância a Lactose"
         description={`
           Cerca de 35% da população brasileira acima de 16 anos possui dificuldade em digerir a lactose existente no leite e seus derivados. 
           A deficiência da lactase acomete 80 a 100% dos índios americanos e asiáticos. Existem três tipos de intolerância a lactose. 
         `}
-        button="saiba mais"
+        buttonLabel="saiba mais"
+        buttonLink="/detail/intolerancia"
         image={intoleranciaImage}
         imagePosition="left"
-        fadeImage="fade-right"
       />
       <WaveTop
         version="1.1"
@@ -92,7 +90,7 @@ const Home: React.FC = () => {
       </WaveTop>
       {/*  */}
       <HomeAbout
-        id="sobre4"
+        id="processo"
         background="gray"
         title="Processamento de Leite UHT Deslactosado"
         description={`
@@ -100,10 +98,10 @@ const Home: React.FC = () => {
           produção de produtos com baixo teor de lactose e também os leites chamados zero lactose.
           O Leite UHT pode ser deslactosado por dois processos: o químico e enzimático.
         `}
-        button="saiba mais"
+        buttonLabel="saiba mais"
+        buttonLink="/detail/processo"
         image={processImage}
         imagePosition="right"
-        fadeImage="fade-left"
       />
       <WaveBottom
         xmlns="http://www.w3.org/2000/svg"
@@ -117,7 +115,7 @@ const Home: React.FC = () => {
       </WaveBottom>
       {/*  */}
       <HomeAbout
-        id="sobre5"
+        id="rotulo"
         background="white"
         title="Como ler rótulos?​ Contém lactose x Pode conter leite​"
         description={`
@@ -126,10 +124,10 @@ const Home: React.FC = () => {
           Dessa forma o residual de lactose que pode estar presente no leite UHT, declarado zero lactose, pode desencadear sintomas indesejáveis.
           Você sabe interpretar o que vem escrito nas embalagens? 
         `}
-        button="saiba mais"
+        buttonLabel="saiba mais"
+        buttonLink="/detail/rotulo"
         image={rotuloImage}
         imagePosition="left"
-        fadeImage="fade-right"
       />
     </>
   )
