@@ -3,9 +3,7 @@ import { NavHashLink } from 'react-router-hash-link'
 import styled from 'styled-components'
 import { rem } from 'polished'
 
-export const Nav = styled.nav`
-  overflow: hidden;
-`
+export const Nav = styled.nav``
 
 export const Container = styled.div`
   width: 90%;

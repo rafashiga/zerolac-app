@@ -4,6 +4,7 @@
   color: #fff;
   background: rgba(0, 0, 0, 0.3);
   box-shadow: 0 4px 12px -9px black;
+  z-index: 9999;
 }
 
 @media (min-width: 900px) {

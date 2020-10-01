@@ -4,6 +4,10 @@ import HomeHero from './HomeHero'
 
 import { WaveTop, WaveBottom } from './styles'
 
+import intoleranciaImage from '../../assets/image/intolerancia.jpg'
+import milkImage from '../../assets/image/milk.jpg'
+import rotuloImage from '../../assets/image/rotulo.jpg'
+
 const Home: React.FC = () => {
   return (
     <>
@@ -11,8 +15,14 @@ const Home: React.FC = () => {
       <HomeAbout
         id="sobre"
         background="white"
-        title="title"
-        description="Et dolore incididunt amet nulla veniam reprehenderit magna eiusmod eiusmod ex do dolor. Ex laborum sit consectetur fugiat in sunt sunt officia reprehenderit laboris voluptate. Ex qui reprehenderit in ea culpa labore labore sint."
+        title="Apresentação"
+        description={`Olá! Sou a Beatriz Shiga. Muito prazer!​ <br> <br>
+          Estou graduando em Engenharia Bioquímica pela Universidade de São Paulo. Sou intolerante a lactose faz 3 anos. 
+          Como parte do meu projeto de Trabalho de Conclusão de curso, este site foi desenvolvido com o objetivo de 
+          divulgar de forma simples diversars informações 
+          que vão desde a composição do leite até leite deslactosado disponível nos supermercados.​
+        `}
+        image={intoleranciaImage}
         imagePosition="left"
         button="button"
         isFirst={true}
@@ -33,9 +43,13 @@ const Home: React.FC = () => {
       <HomeAbout
         id="sobre2"
         background="gray"
-        title="title"
-        description="Et dolore incididunt amet nulla veniam reprehenderit magna eiusmod eiusmod ex do dolor. Ex laborum sit consectetur fugiat in sunt sunt officia reprehenderit laboris voluptate. Ex qui reprehenderit in ea culpa labore labore sint."
-        button="button"
+        title="Leite"
+        description={`
+          O leite é considerado um dos alimentos mais completos. ​
+          É constituído de água, proteínas, carboidratos, gorduras, sais minerais e vitaminas. 
+        `}
+        button="saiba mais"
+        image={milkImage}
         imagePosition="right"
         fadeImage="fade-left"
       />
@@ -53,9 +67,13 @@ const Home: React.FC = () => {
       <HomeAbout
         id="sobre3"
         background="white"
-        title="title"
-        description="Et dolore incididunt amet nulla veniam reprehenderit magna eiusmod eiusmod ex do dolor. Ex laborum sit consectetur fugiat in sunt sunt officia reprehenderit laboris voluptate. Ex qui reprehenderit in ea culpa labore labore sint."
-        button="button"
+        title="Intolerância a Lactose"
+        description={`
+          Cerca de 35% da população brasileira acima de 16 anos possui dificuldade em digerir a lactose existente no leite e seus derivados. 
+          A deficiência da lactase acomete 80 a 100% dos índios americanos e asiáticos. Existem três tipos de intolerância a lactose. 
+        `}
+        button="saiba mais"
+        image={intoleranciaImage}
         imagePosition="left"
         fadeImage="fade-right"
       />
@@ -74,9 +92,14 @@ const Home: React.FC = () => {
       <HomeAbout
         id="sobre4"
         background="gray"
-        title="title"
-        description="Et dolore incididunt amet nulla veniam reprehenderit magna eiusmod eiusmod ex do dolor. Ex laborum sit consectetur fugiat in sunt sunt officia reprehenderit laboris voluptate. Ex qui reprehenderit in ea culpa labore labore sint."
-        button="button"
+        title="Processamento de Leite UHT Deslactosado"
+        description={`
+          A indústria de laticínios vem nos últimos anos investindo no desenvolvimento e 
+          produção de produtos com baixo teor de lactose e também os leites chamados zero lactose.
+          O Leite UHT pode ser deslactosado por dois processos: o químico e enzimático.
+        `}
+        button="saiba mais"
+        image={intoleranciaImage}
         imagePosition="right"
         fadeImage="fade-left"
       />
@@ -94,9 +117,15 @@ const Home: React.FC = () => {
       <HomeAbout
         id="sobre5"
         background="white"
-        title="title"
-        description="Et dolore incididunt amet nulla veniam reprehenderit magna eiusmod eiusmod ex do dolor. Ex laborum sit consectetur fugiat in sunt sunt officia reprehenderit laboris voluptate. Ex qui reprehenderit in ea culpa labore labore sint."
-        button="button"
+        title="Como ler rótulos?​ Contém lactose x Pode conter leite​"
+        description={`
+          A quantidade definida de lactose que irá causar sintomas varia de indivíduo para indivíduo, 
+          dependendo do seu grau de deficiência de lactase e do teor de lactose no produto consumido. 
+          Dessa forma o residual de lactose que pode estar presente no leite UHT, declarado zero lactose, pode desencadear sintomas indesejáveis.
+          Você sabe interpretar o que vem escrito nas embalagens? 
+        `}
+        button="saiba mais"
+        image={rotuloImage}
         imagePosition="left"
         fadeImage="fade-right"
       />

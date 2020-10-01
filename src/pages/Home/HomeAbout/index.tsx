@@ -12,11 +12,10 @@ import {
   Image
 } from './styles'
 
-import image from '../../../assets/image/image.jpg'
-
 interface HomeAboutProps {
   id: string
   background: 'gray' | 'white'
+  image: string
   imagePosition: 'left' | 'right'
   title: string
   description: string
@@ -30,6 +29,7 @@ const HomeAbout: React.FC<HomeAboutProps> = ({
   background,
   title,
   description,
+  image,
   imagePosition,
   button,
   isFirst,
@@ -54,7 +54,7 @@ const HomeAbout: React.FC<HomeAboutProps> = ({
         </ImageContainer>
         <InfoContainer className={imagePosition} data-aos="fade-up">
           <Title>{title}</Title>
-          <Description>{description}</Description>
+          <Description dangerouslySetInnerHTML={{ __html: description }} />
           <Button id={`btn-${id}`} name={button} type="button" />
         </InfoContainer>
       </Content>
