@@ -46,6 +46,7 @@ const Navbar: React.FC = () => {
 
   const handleNavLink = (hash: string) => {
     setCurrentHash(hash)
+    toggleNavbar()
     document.getElementById('btn-' + hash.replace('#', ''))?.focus()
   }
 
@@ -85,6 +86,7 @@ const Navbar: React.FC = () => {
             ]}
             currentClassName="active"
             onUpdate={handleScrollSpy}
+            scrolledPastClassName=""
           >
             <NavItem>
               <NavLink

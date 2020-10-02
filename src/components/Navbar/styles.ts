@@ -13,7 +13,7 @@ export const Container = styled.div`
   overflow: hidden;
   min-height: 56px;
 
-  @media (min-width: 900px) {
+  @media (min-width: ${props => props.theme.screen.desktop}) {
     height: 56px;
 
     display: flex;
@@ -31,7 +31,7 @@ export const Logo = styled(Link)`
   position: absolute;
   top: 8px;
 
-  @media (min-width: 900px) {
+  @media (min-width: ${props => props.theme.screen.desktop}) {
     position: relative;
     top: 0;
   }
@@ -58,7 +58,7 @@ export const NavButton = styled.button`
     color: #000;
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: ${props => props.theme.screen.desktop}) {
     display: none;
   }
 `
@@ -112,7 +112,7 @@ export const NavItem = styled.li`
     border-bottom: 4px solid ${props => props.theme.colors.primary};
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: ${props => props.theme.screen.desktop}) {
     margin: 0;
     margin-right: 1rem;
 
@@ -129,9 +129,11 @@ export const NavLink = styled(NavHashLink)`
   text-decoration: none;
   color: #fff;
 
-  &:hover {
-    color: ${props => props.theme.colors.primary};
-    border-bottom: 4px solid ${props => props.theme.colors.primary};
+  @media (min-width: ${props => props.theme.screen.desktop}) {
+    &:hover {
+      color: ${props => props.theme.colors.primary};
+      border-bottom: 4px solid ${props => props.theme.colors.primary};
+    }
   }
 
   &.active {
