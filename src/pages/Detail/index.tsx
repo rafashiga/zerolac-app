@@ -27,7 +27,7 @@ const Detail: React.FC = () => {
     } else {
       history.push('/')
     }
-  }, [])
+  }, [history, id])
 
   return (
     <>

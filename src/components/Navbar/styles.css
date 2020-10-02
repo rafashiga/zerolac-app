@@ -7,10 +7,18 @@
   z-index: 9999;
 }
 
+.navbar__list {
+  list-style: none;
+}
+
 @media (min-width: 900px) {
   .navbar {
     background: transparent;
     box-shadow: none;
+  }
+
+  .navbar__list {
+    display: flex;
   }
 }
 

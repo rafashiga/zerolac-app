@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { NavHashLink } from 'react-router-hash-link'
+import Scrollspy from 'react-scrollspy'
 import styled from 'styled-components'
 import { rem } from 'polished'
 
@@ -46,7 +47,7 @@ export const NavButton = styled.button`
   border: 1px solid #fff;
   position: absolute;
   right: 0;
-  top: 10px;
+  top: 1rem;
   cursor: pointer;
   transition: background 0.2s;
   font-weight: 600;
@@ -64,17 +65,15 @@ export const NavButton = styled.button`
 
 export const NavListContainer = styled.div`
   transition: max-height 1s ease-out, opacity 1.4s;
-  margin-top: 3.5rem;
+  margin-top: 4.2rem;
 
   &.navbar-close {
-    /* display: none; */
     visibility: hidden;
     opacity: 0;
     max-height: 0;
   }
 
   &.navbar-open {
-    /* display: block; */
     visibility: visible;
     opacity: 1;
     max-height: 500px;
@@ -92,7 +91,7 @@ export const NavListContainer = styled.div`
   }
 `
 
-export const NavList = styled.ul`
+export const NavList = styled(Scrollspy)`
   list-style: none;
 
   @media (min-width: 900px) {
@@ -106,6 +105,11 @@ export const NavItem = styled.li`
 
   &:first-child {
     margin-top: 1rem;
+  }
+
+  &.active a {
+    color: ${props => props.theme.colors.primary};
+    border-bottom: 4px solid ${props => props.theme.colors.primary};
   }
 
   @media (min-width: 900px) {
@@ -125,14 +129,12 @@ export const NavLink = styled(NavHashLink)`
   text-decoration: none;
   color: #fff;
 
-  &:hover,
-  &:active,
-  &:focus {
+  &:hover {
     color: ${props => props.theme.colors.primary};
     border-bottom: 4px solid ${props => props.theme.colors.primary};
   }
 
-  &.selected {
+  &.active {
     color: ${props => props.theme.colors.primary};
     border-bottom: 4px solid ${props => props.theme.colors.primary};
   }
