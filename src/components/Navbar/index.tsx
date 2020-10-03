@@ -23,6 +23,7 @@ const Navbar: React.FC = () => {
   useEffect(() => {
     let nav = navbarRef.current
 
+
     if (!location.pathname.includes('/detail')) {
       if (nav) nav.className = 'navbar'
       window.addEventListener('scroll', handleScroll)
@@ -110,7 +111,7 @@ const Navbar: React.FC = () => {
             </NavItem>
             <NavItem>
               <NavLink
-                to="#leite"
+                to="/#leite"
                 onClick={() => handleNavLink('#leite')}
                 activeClassName={currentHash === '#leite' ? 'active' : ''}
               >
@@ -119,7 +120,7 @@ const Navbar: React.FC = () => {
             </NavItem>
             <NavItem>
               <NavLink
-                to="#intolerancia"
+                to="/#intolerancia"
                 onClick={() => handleNavLink('#intolerancia')}
                 activeClassName={
                   currentHash === '#intolerancia' ? 'active' : ''
@@ -130,7 +131,7 @@ const Navbar: React.FC = () => {
             </NavItem>
             <NavItem>
               <NavLink
-                to="#processo"
+                to="/#processo"
                 onClick={() => handleNavLink('#processo')}
                 activeClassName={currentHash === '#processo' ? 'active' : ''}
               >
@@ -139,7 +140,7 @@ const Navbar: React.FC = () => {
             </NavItem>
             <NavItem>
               <NavLink
-                to="#rotulo"
+                to="/#rotulo"
                 onClick={() => handleNavLink('#rotulo')}
                 activeClassName={currentHash === '#rotulo' ? 'active' : ''}
               >

@@ -21,6 +21,10 @@ const Detail: React.FC = () => {
   const history = useHistory()
 
   useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
+  useEffect(() => {
     const [dataFiltered] = data.filter(register => id === register.id)
     if (dataFiltered) {
       setItem(dataFiltered)
