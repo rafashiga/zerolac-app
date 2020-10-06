@@ -7,6 +7,7 @@ import api from '../../services/api'
 import { WaveTop, WaveBottom } from './styles'
 
 import milkImage from '../../assets/image/milk.jpg'
+import LoadingHome from '../../components/LoadingHome'
 
 interface Data {
   id: number
@@ -22,16 +23,24 @@ interface Data {
 const Home: React.FC = () => {
   const [data, setData] = useState([] as Data[])
   const [inicioData, setInicioData] = useState({} as Data)
+  const [loading, setloading] = useState(false)
 
   useEffect(() => {
-    api.get('/zerolacs?_sort=order:ASC').then(response => {
-      setData(response.data)
-      const [inicio] = response.data.filter((item: Data) => item.order === 1)
-      setInicioData(inicio)
+    setloading(true)
+    api
+      .get('/zerolacs?_sort=order:ASC')
+      .then(response => {
+        setData(response.data)
+        const [inicio] = response.data.filter((item: Data) => item.order === 1)
+        setInicioData(inicio)
 
-      const zerolacData = response.data.filter((item: Data) => item.order !== 1)
-      setData(zerolacData)
-    })
+        const zerolacData = response.data.filter(
+          (item: Data) => item.order !== 1
+        )
+        setData(zerolacData)
+        setloading(false)
+      })
+      .catch(error => setloading(false))
   }, [])
 
   const isOdd = (order: number) => {
@@ -50,7 +59,9 @@ const Home: React.FC = () => {
   return (
     <>
       <HomeHero description={inicioData.shortDescription} />
-      {data &&
+      {loading && <LoadingHome />}
+      {!loading &&
+        data &&
         data.map((item: Data) => (
           <div key={item.order}>
             {isOdd(item.order) && (

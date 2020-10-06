@@ -79,7 +79,7 @@ export const NavListContainer = styled.div`
     max-height: 500px;
   }
 
-  @media (min-width: 900px) {
+  @media (min-width: ${props => props.theme.screen.desktop}) {
     margin-top: 0;
 
     &.navbar-close,
@@ -94,7 +94,7 @@ export const NavListContainer = styled.div`
 export const NavList = styled.ul`
   list-style: none;
 
-  @media (min-width: 900px) {
+  @media (min-width: ${props => props.theme.screen.desktop}) {
     display: flex;
   }
 `
