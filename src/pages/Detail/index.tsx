@@ -34,6 +34,7 @@ const Detail: React.FC = () => {
   let { id } = useParams<UrlParams>()
   const [item, setItem] = useState({} as Data)
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(false)
   const history = useHistory()
 
   const loadingCss = css`
@@ -46,6 +47,7 @@ const Detail: React.FC = () => {
   }, [])
 
   useEffect(() => {
+    setError(false)
     setLoading(true)
     api
       .get('zerolacs', {
@@ -60,6 +62,7 @@ const Detail: React.FC = () => {
       .catch(error => {
         console.log(error)
         setLoading(false)
+        setError(true)
       })
   }, [id])
 
@@ -69,7 +72,7 @@ const Detail: React.FC = () => {
 
   return (
     <>
-      {loading && (
+      {loading && !error && (
         <LoadingContainer>
           <RingLoader
             size={120}
@@ -81,7 +84,7 @@ const Detail: React.FC = () => {
         </LoadingContainer>
       )}
 
-      {item ? (
+      {!error && item ? (
         <>
           <Image backgroundImage={item.bannerImage?.formats.large.url} />
           <Container>
@@ -90,13 +93,15 @@ const Detail: React.FC = () => {
             <Markdown source={item.longDescription} />
           </Container>
         </>
-      ) : (
+      ) : null}
+
+      {!item || error ? (
         <MessageContainer>
           <MessageImage src={notFoundImg} />
           <Message>Conteúdo não econtrado</Message>
           <Button label="voltar" onClick={goBack} type="button" />
         </MessageContainer>
-      )}
+      ) : null}
     </>
   )
 }

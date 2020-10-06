@@ -6,7 +6,6 @@ import api from '../../services/api'
 
 import { WaveTop, WaveBottom } from './styles'
 
-import milkImage from '../../assets/image/milk.jpg'
 import LoadingHome from '../../components/LoadingHome'
 
 interface Data {

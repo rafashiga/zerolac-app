@@ -1,7 +1,6 @@
 import ReactMarkdown from 'react-markdown'
 import { rem } from 'polished'
 import styled from 'styled-components'
-import RingLoader from 'react-spinners/RingLoader'
 
 type ImageDiv = {
   backgroundImage: string

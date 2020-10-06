@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import { NavHashLink } from 'react-router-hash-link'
-import Scrollspy from 'react-scrollspy'
 import styled from 'styled-components'
 import { rem } from 'polished'
 
