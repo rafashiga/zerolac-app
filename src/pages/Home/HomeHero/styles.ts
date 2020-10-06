@@ -11,6 +11,7 @@ export const Container = styled.div`
   background-repeat: no-repeat;
   background-size: 100%;
   background-color: #000;
+  margin-bottom: ${rem(120)};
 
   @media (max-width: 400px) {
     background-size: 100vh;
