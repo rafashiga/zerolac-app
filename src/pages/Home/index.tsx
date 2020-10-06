@@ -6,11 +6,7 @@ import api from '../../services/api'
 
 import { WaveTop, WaveBottom } from './styles'
 
-import intoleranciaImage from '../../assets/image/intolerancia.jpg'
-import biaImage from '../../assets/image/bia.jpg'
 import milkImage from '../../assets/image/milk.jpg'
-import rotuloImage from '../../assets/image/rotulo.jpg'
-import processImage from '../../assets/image/image05.jpg'
 
 interface Data {
   id: number
@@ -47,6 +43,10 @@ const Home: React.FC = () => {
     return text.normalize('NFD').replace(/[\u0300-\u036f]/g, '')
   }
 
+  const checkIsLastItem = (id: number) => {
+    return data.length + 1 !== id
+  }
+
   return (
     <>
       <HomeHero description={inicioData.shortDescription} />
@@ -73,11 +73,11 @@ const Home: React.FC = () => {
               description={item.shortDescription}
               buttonLabel={item.longDescription ? 'saiba mais' : ''}
               buttonLink={`/detail/${item.name}`}
-              image={milkImage}
+              image={item.mainImage?.formats.large.url}
               imagePosition={isOdd(item.order) ? 'right' : 'left'}
             />
 
-            {data.length + 1 !== item.id
+            {checkIsLastItem(item.id)
               ? isOdd(item.order) && (
                   <WaveBottom
                     xmlns="http://www.w3.org/2000/svg"

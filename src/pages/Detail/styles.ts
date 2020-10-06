@@ -28,3 +28,9 @@ export const Title = styled.h1`
 export const Text = styled.p`
   line-height: 1.75rem;
 `
+
+export const Message = styled.h1`
+  text-align: center;
+  padding-top: ${rem(200)};
+  height: 81vh;
+`

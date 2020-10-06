@@ -23,7 +23,6 @@ const Navbar: React.FC = () => {
   useEffect(() => {
     let nav = navbarRef.current
 
-
     if (!location.pathname.includes('/detail')) {
       if (nav) nav.className = 'navbar'
       window.addEventListener('scroll', handleScroll)
@@ -55,10 +54,6 @@ const Navbar: React.FC = () => {
     setShowLinks(!showLinks)
   }
 
-  const handleScrollSpy = () => {
-    setCurrentHash('')
-  }
-
   return (
     <Nav ref={navbarRef} className="navbar">
       <Container>
@@ -75,20 +70,7 @@ const Navbar: React.FC = () => {
         <NavListContainer
           className={showLinks ? 'navbar-open' : 'navbar-close'}
         >
-          <NavList
-            className="navbar__list"
-            items={[
-              'inicio',
-              'apresentacao',
-              'leite',
-              'intolerancia',
-              'processo',
-              'rotulo'
-            ]}
-            currentClassName="active"
-            onUpdate={handleScrollSpy}
-            scrolledPastClassName=""
-          >
+          <NavList className="navbar__list">
             <NavItem>
               <NavLink
                 to="/#inicio"

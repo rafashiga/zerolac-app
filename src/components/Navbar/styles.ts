@@ -91,7 +91,7 @@ export const NavListContainer = styled.div`
   }
 `
 
-export const NavList = styled(Scrollspy)`
+export const NavList = styled.ul`
   list-style: none;
 
   @media (min-width: 900px) {
