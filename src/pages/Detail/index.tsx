@@ -90,7 +90,7 @@ const Detail: React.FC = () => {
           <Container>
             <Title>{item.title}​</Title>
             {/* <Text dangerouslySetInnerHTML={{ __html: item.longDescription }} /> */}
-            <Markdown source={item.longDescription} />
+            <Markdown escapeHtml={false} source={item.longDescription} />
           </Container>
         </>
       ) : null}
