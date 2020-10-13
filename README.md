@@ -25,7 +25,7 @@
   <img src="./src/assets/image/website.png">
   <br>
   <br>
-   <a href="https://zerolac.netlify.app/" target="_blank">
+   <a href="https://zerolac-old.netlify.app/" target="_blank">
     <img src="./src/assets/image/button_visit.png" width="120" alt="visit"/>
    </a>
   <br>
